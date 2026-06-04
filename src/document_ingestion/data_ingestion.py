@@ -35,9 +35,9 @@ class FaissManager:
         
         if self.meta_path.exists():
             try:
-                self._meta = json.loads(self.meta_path.read_text(encoding="utf-8")) or {"rows": {}} # load it if alrady there
+                self._meta = json.loads(self.meta_path.read_text(encoding="utf-8")) or {"rows": {}} # load it if already there
             except Exception:
-                self._meta = {"rows": {}} # init the empty one if dones not exists
+                self._meta = {"rows": {}} # init the empty one if does not exists
         
 
         self.model_loader = model_loader or ModelLoader()

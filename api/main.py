@@ -39,7 +39,7 @@ app.add_middleware(
 @app.get("/", response_class=HTMLResponse)
 async def serve_ui(request: Request):
     log.info("Serving UI homepage.")
-    resp = templates.TemplateResponse("index.html", {"request": request})
+    resp = templates.TemplateResponse("index.html", {"request": request}) #rendering index.html
     resp.headers["Cache-Control"] = "no-store"
     return resp
 
@@ -75,7 +75,7 @@ async def compare_documents(reference: UploadFile = File(...), actual: UploadFil
         ref_path, act_path = dc.save_uploaded_files(
             FastAPIFileAdapter(reference), FastAPIFileAdapter(actual)
         )
-        _ = ref_path, act_path
+        _ = ref_path, act_path # '_' is used whenever we are not using them actively.
         combined_text = dc.combine_documents()
         comp = DocumentComparatorLLM()
         df = comp.compare_documents(combined_text)
