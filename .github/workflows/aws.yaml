@@ -5,8 +5,8 @@ on:
     types:
       - completed
 env:
-  AWS_REGION: ap-southeast-2
-  ECR_REPOSITORY: documentaitoolkit
+  AWS_REGION: ap-south-2
+  ECR_REPOSITORY: documentchatbot 
   ECS_SERVICE: document-aitk-service
   ECS_CLUSTER: document-aitk-cluster-lat
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
